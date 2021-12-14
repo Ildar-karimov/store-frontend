@@ -10,7 +10,13 @@ import LoginPage from "./pages/LoginPage";
 import ProductsPage from "./pages/ProductsPage";
 
 export const authRoutes = [
-    {}
+    {
+        path: PRODUCTS_ROUTE,
+        Component: <ProductsPage/>,
+    },
+    {
+        path: CURRENT_PRODUCT_ROUTE + '/:id',
+    },
 ]
 
 export const publicRoutes = [
@@ -23,14 +29,7 @@ export const publicRoutes = [
         Component: <LoginPage/>,
     },
     {
-        path: PRODUCTS_ROUTE,
-        Component: <ProductsPage/>,
-    },
-    {
-        path: CURRENT_PRODUCT_ROUTE + '/:id',
-    },
-    {
         path: NOT_FOUND_ROUTE,
-        Component: <ProductsPage/>
+        Component: <LoginPage/>
     }
 ]
