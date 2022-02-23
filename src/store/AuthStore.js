@@ -11,8 +11,8 @@ export default class AuthStore {
         this._isAuth = status
     }
 
-    setUser(user) {
-        this._user = user
+    setUser(name, surname, role, email) {
+        this._user = {name,surname, role, email}
     }
 
     get isAuth(){

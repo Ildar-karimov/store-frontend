@@ -1,13 +1,14 @@
 import RegistrationPage from "./pages/RegistrationPage";
 import {
     CURRENT_PRODUCT_ROUTE,
-    LOGIN_ROUTE,
+    LOGIN_ROUTE, MY_PROFILE,
     NOT_FOUND_ROUTE,
     PRODUCTS_ROUTE,
     REGISTRATION_ROUTE
 } from "./utils/const-routes";
 import LoginPage from "./pages/LoginPage";
 import ProductsPage from "./pages/ProductsPage";
+import MyProfilePage from "./pages/MyProfilePage";
 
 export const authRoutes = [
     {
@@ -17,6 +18,10 @@ export const authRoutes = [
     {
         path: CURRENT_PRODUCT_ROUTE + '/:id',
     },
+    {
+        path: MY_PROFILE,
+        Component: <MyProfilePage />
+    }
 ]
 
 export const publicRoutes = [

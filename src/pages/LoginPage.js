@@ -9,8 +9,6 @@ import {login} from "../http/authApi";
 import {Context} from "../index";
 import {observer} from "mobx-react-lite";
 import TopBar from "../components/TopBar";
-import ReactDOM from "react-dom";
-import App from "../App";
 
 const LoginPage = observer(() => {
     const {auth} = useContext(Context)
@@ -22,8 +20,9 @@ const LoginPage = observer(() => {
         let user
         try {
             user = await login(email, password)
+            console.log(user)
             auth.setIsAuth(true)
-            auth.setUser(user)
+            auth.setUser(user.name, user.surname, user.role, user.email)
             alert("Добро пожаловать!")
             navigate(PRODUCTS_ROUTE)
         }catch (e) {

@@ -5,7 +5,7 @@ import {Header} from "antd/es/layout/layout";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import {useNavigate} from "react-router-dom";
-import {LOGIN_ROUTE} from "../utils/const-routes";
+import {LOGIN_ROUTE, MY_PROFILE} from "../utils/const-routes";
 
 const header = {
     display: "flex",
@@ -34,7 +34,12 @@ const TopBar = observer(() => {
             {auth.isAuth ?
                 <div>
                     <Avatar src="https://joeschmoe.io/api/v1/random"/>
-                    <span style={{marginLeft: '5px', color: 'white'}}>Ильдар Каримов</span>
+                    <span
+                        style={{marginLeft: '5px', color: 'white', cursor:'pointer'}}
+                        onClick={() => navigate(MY_PROFILE)}
+                    >
+                        {auth.user.name + ' ' + auth.user.surname}
+                    </span>
                     <Button type="link" onClick={() => logOut()}>Выйти</Button>
                 </div>
                 :
